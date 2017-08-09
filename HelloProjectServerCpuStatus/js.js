@@ -1,7 +1,7 @@
 var Child = {
     props: ['cpuMessage'],
-    template: '<p>{{cpuMessage}}</p>',
-}
+    template: '<p>{{cpuMessage}}</p>'
+};
 
 var vm = new Vue({
     el: '#app',
@@ -24,7 +24,7 @@ var vm = new Vue({
     methods: {
         cpuLoading: function (event) {
             vm.isClicked = false;
-            vm.buttonName = " ... please wait ... "
+            vm.buttonName = " ... please wait ... ";
             vm.cpuUsage = ' ... calculating ... ';
             $.ajax({
                 url: 'cpu'})
@@ -39,4 +39,4 @@ var vm = new Vue({
     components: {
         'cpuload': Child
     }
-})
+});
