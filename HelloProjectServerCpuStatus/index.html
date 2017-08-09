@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Get CPU Load</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+<button  v-bind:title="messageTitle" v-on:click="cpuLoading">{{buttonName}}</button>
+
+    <template v-if=isClicked>
+        <p v-bind:style="styleObjectAfter">{{cpuUsage}}</p>
+    </template>
+    <template v-else>
+        <p v-bind:style="styleObjectBefore">{{cpuUsage}}</p>
+    </template>
+</div>
+
+<script src="js.js"></script>
+
+</body>
+</html>
