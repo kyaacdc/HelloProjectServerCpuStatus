@@ -9,13 +9,13 @@
 <body>
 
 <div id="app">
-<button  v-bind:title="messageTitle" v-on:click="cpuLoading">{{buttonName}}</button>
+    <button  v-bind:title="messageTitle" v-on:click="cpuLoading">{{buttonName}}</button>
 
     <template v-if=isClicked>
-        <p v-bind:style="styleObjectAfter">{{cpuUsage}}</p>
+        <cpuload v-bind:cpu-message="cpuUsage" v-bind:style="styleObjectAfter"></cpuload>
     </template>
     <template v-else>
-        <p v-bind:style="styleObjectBefore">{{cpuUsage}}</p>
+        <cpuload v-bind:cpu-message="cpuUsage" v-bind:style="styleObjectBefore"></cpuload>
     </template>
 </div>
 

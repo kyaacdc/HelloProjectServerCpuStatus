@@ -1,3 +1,8 @@
+var Child = {
+    props: ['cpuMessage'],
+    template: '<p>{{cpuMessage}}</p>',
+}
+
 var vm = new Vue({
     el: '#app',
     data: {
@@ -14,6 +19,7 @@ var vm = new Vue({
             color: 'red',
             fontSize: '50px'
         }
+
     },
     methods: {
         cpuLoading: function (event) {
@@ -25,9 +31,12 @@ var vm = new Vue({
                 .done(function(data) {
                     console.log(data);
                     vm.isClicked = true;
-                    vm.cpuUsage = data;
+                    cpuUsageValue = vm.cpuUsage = data;
                     vm.buttonName = 'Get CPU Load Again!';
                 });
         }
+    },
+    components: {
+        'cpuload': Child
     }
 })
